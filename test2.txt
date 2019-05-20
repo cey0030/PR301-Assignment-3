@@ -1,0 +1,10 @@
+@startuml
+Zoo "1" o-- "many" Animal
+
+class ToyBox {
+    name : String
+}
+
+class Toy {
+}
+@enduml
