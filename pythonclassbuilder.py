@@ -11,25 +11,27 @@ class AbstractBuilder(metaclass=ABCMeta):
         return self.result
 
     @abstractmethod
-    def add_class_name(self):
+    def add_class_name(self, class_item):
         pass
 
     @abstractmethod
-    def add_attributes(self):
+    def add_attributes(self, class_item):
         pass
 
     @abstractmethod
-    def add_methods(self):
+    def add_methods(self, class_item):
         pass
 
     @abstractmethod
-    def add_relationships(self):
+    def add_relationships(self, class_item):
         pass
 
 
 class PythonClassBuilder(AbstractBuilder):
     def __init__(self):
+        super().__init__()
         self.fileProcessor = FileProcessor()
+        self.num_all_attribute_list = self.fileProcessor.num_all_attribute_list
         self.class_name_list = self.fileProcessor.class_name_list
 
     def check_methods(self, listitem):
@@ -64,7 +66,6 @@ class PythonClassBuilder(AbstractBuilder):
                 raise NameError('Invalid name: ' + listitem)
         except NameError as e:
             print(e)
-
 
     def add_class_name(self, class_item):
         self.class_name_list.append(self.fileProcessor.get_class_name(class_item))
