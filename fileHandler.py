@@ -1,15 +1,19 @@
 from fileProcessor import FileProcessor
-from FileInput import FileInput
 from pythonclassbuilder import PythonClassBuilder
 from director import Director
+from FileInput import FileInput
 
 
 class PrintClass:
     def __init__(self):
+        self.file_name = ''
         self.fileProcessor = FileProcessor()
         self.fileInput = FileInput(self.fileProcessor)
-        self.class_list = self.fileInput.class_list
         self.class_name_list = self.fileProcessor.class_name_list
+
+    @property
+    def class_list(self):
+        return self.class_handler(self.file_name)
 
     def output_classes(self, file_dir):
         files = []
@@ -19,6 +23,8 @@ class PrintClass:
             pythonClassBuilder = PythonClassBuilder()
             director = Director(pythonClassBuilder)
             director.build_class(classItem)
+            self.fileProcessor.class_name_list.append(pythonClassBuilder.class_name_list)
+            self.fileProcessor.num_all_attribute_list.append(pythonClassBuilder.num_all_attribute_list)
             result = pythonClassBuilder.get_result()
             with open(file, "w") as output:
                 output.write(result)
@@ -47,3 +53,7 @@ class PrintClass:
 
     def get_relationship(self, class_array):
         return self.fileProcessor.get_relationship(class_array)
+
+    def class_handler(self, file_name):
+        self.file_name = file_name
+        return self.fileInput.class_handler(file_name)
