@@ -33,6 +33,7 @@ class PythonClassBuilder(AbstractBuilder):
         self.fileProcessor = FileProcessor()
         self.num_all_attribute_list = self.fileProcessor.num_all_attribute_list
         self.class_name_list = self.fileProcessor.class_name_list
+        self.num_all_method_list = self.fileProcessor.num_all_method_list
 
     def check_methods(self, listitem):
         if Validator.validate_method_name(listitem):
