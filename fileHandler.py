@@ -9,7 +9,6 @@ class PrintClass:
         self.file_name = ''
         self.fileProcessor = FileProcessor()
         self.fileInput = FileInput(self.fileProcessor)
-        self.class_name_list = self.fileProcessor.class_name_list
 
     @property
     def class_list(self):
@@ -24,7 +23,8 @@ class PrintClass:
             director = Director(pythonClassBuilder)
             director.build_class(classItem)
             self.fileProcessor.class_name_list.append(pythonClassBuilder.class_name_list)
-            self.fileProcessor.num_all_attribute_list.append(pythonClassBuilder.num_all_attribute_list)
+            self.fileProcessor.num_all_attribute_list.append(pythonClassBuilder.num_all_attribute_list[0])
+            self.fileProcessor.num_all_method_list.append(pythonClassBuilder.num_all_method_list[0])
             result = pythonClassBuilder.get_result()
             with open(file, "w") as output:
                 output.write(result)
