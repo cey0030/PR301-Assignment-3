@@ -78,27 +78,3 @@ class PythonClassBuilder(AbstractBuilder):
     def check_class_names(self, class_item):
         if not Validator.validate_class_name(self.fileProcessor.get_class_name(class_item)):
             print("Invalid class name: " + self.get_class_name(class_item))
-
-
-pythonClassBuilder = PythonClassBuilder()
-pythonClassBuilder.add_class_name(['class Animal {\n',
-                                       '    name : String\n',
-                                       '    number : Integer\n',
-                                       '    __str__()\n',
-                                       '}\n'])
-pythonClassBuilder.add_attributes(['class Animal {\n',
-                                       '    name : String\n',
-                                       '    number : Integer\n',
-                                       '    __str__()\n',
-                                       '}\n'])
-pythonClassBuilder.add_methods(['class Animal {\n',
-                                       '    name : String\n',
-                                       '    number : Integer\n',
-                                       '    __str__()\n',
-                                       '}\n'])
-pythonClassBuilder.add_relationships(['class Animal {\n',
-                                       '    name : String\n',
-                                       '    number : Integer\n',
-                                       '    __str__()\n',
-                                       '}\n'])
-print(pythonClassBuilder.get_result())
