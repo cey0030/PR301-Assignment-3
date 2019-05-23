@@ -22,4 +22,6 @@ Location: PR301-Assignment-2-Version-1-chart_maker.py-ChartMaker-between Line 0 
 
 Reasons this design pattern is suitable to be applied: 
 
-1. 
+1. The single responsibility principle from SOLID states that each class must do only one thing. ChartMaker class does three things; it creates a bar chart, creates a pie chart, and creates a line graph via the methods create_bar_chart, create_pie_chart, and create_line_graph respectively. Therefore, this violates the single responsibility principle. By applying the decorator design pattern, each of the methods create_bar_chart, create_pie_chart, and create_line_graph will be in their own decorator class, which means that each decorator class will execute only one task. For example, the BarChartDecorator would be the class with a method to transform the input data into a bar chart, which retains the same functionality as the original Assignment 2 code, but satisfies the single responsibility principle since it does only one thing. Same with the PieChartDecorator class and the LineGraphDecorator classes which will be created when the decorator design pattern is applied to this code. Hence, the decorator pattern is a suitable design pattern to be applied to the code in ChartMaker since it allows it to satisfy the single responsibility principle from SOLID. 
+
+2. 
