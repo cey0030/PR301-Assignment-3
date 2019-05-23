@@ -16,7 +16,7 @@ Reasons this design pattern is suitable to be applied:
 
 4. Applying the builder design pattern to PrintClass makes it more flexible. If, for example, there was a builder class which built Python code as the final product string, and another builder class which built JavaScript code as the final product string, the client can then call either, thus giving more flexibility to the client, since they can call whichever one they require. In the original code, it is very rigid and inflexible since the client can only create a Python code string, so if they wanted to create a JavaScript code string or one of any other language, they couldn't, and this is inflexible. Therefore, applying the builder design pattern to PrintClass is suitable as it allows the code to be more flexible. 
 
-### Decorator
+### Name: Decorator
 
 Location: PR301-Assignment-2-Version-1-chart_maker.py-ChartMaker-between Line 0 and 39
 
