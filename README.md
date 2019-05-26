@@ -27,3 +27,7 @@ Reasons this design pattern is suitable to be applied:
 2. It enables my program to be more extendable, for example, another decorator, maybe an Area chart, could be added if the client needs to without having to change any other code. This opens the program up to allow for extra functionality to be added when the client needs it. 
 
 3. The program is more flexible, as the Client can choose what type of decorator they want. For example, in my program, they might want a bar chart. In this case they'd choose to instantiate the BarChartDecorator and use it to decorate their data. Or, if they'd prefer representing their data via a pie chart, they'd instantiate the PieChartDecorator. In addition, they could use one decorator inside another, if the type of chart permits it, to create complex charts for representing data. Applying the design pattern allows for this functionality to be added, making the program more open to modification and flexible to the client's needs. 
+
+4. The design pattern allows the decorator to use one object and then add the type of chart the client requires without having to build many objects. Applying the decorator design pattern to my code allows for the manipulation of an object. The data, all_num doesn't change, but the client can change how it is presented by choosing the appropriate decorator to display it, for example, BarChartDecorator to display all_num in the form of a bar chart. 
+
+
