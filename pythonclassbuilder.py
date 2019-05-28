@@ -39,7 +39,7 @@ class PythonClassBuilder(AbstractBuilder):
         if Validator.validate_method_name(listitem):
             self.result += '\n'
             self.result += 'def ' + listitem + '(self):\n     # Todo: inco' \
-                                          'mplete\n        pass\n'
+                                               'mplete\n        pass\n'
         else:
             self.result += "# method name is invalid\n"
 
