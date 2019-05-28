@@ -19,13 +19,13 @@ class PrintClass:
         for classItem in self.class_list:
             files.append(file_dir + self.get_class_name(classItem) + '.py')
         for classItem, file in zip(self.class_list, files):
-            pythonClassBuilder = PythonClassBuilder()
-            director = Director(pythonClassBuilder)
+            python_class_builder = PythonClassBuilder()
+            director = Director(python_class_builder)
             director.build_class(classItem)
-            self.fileProcessor.class_name_list.append(pythonClassBuilder.class_name_list)
-            self.fileProcessor.num_all_attribute_list.append(pythonClassBuilder.num_all_attribute_list[0])
-            self.fileProcessor.num_all_method_list.append(pythonClassBuilder.num_all_method_list[0])
-            result = pythonClassBuilder.get_result()
+            self.fileProcessor.class_name_list.append(python_class_builder.class_name_list)
+            self.fileProcessor.num_all_attribute_list.append(python_class_builder.num_all_attribute_list[0])
+            self.fileProcessor.num_all_method_list.append(python_class_builder.num_all_method_list[0])
+            result = python_class_builder.get_result()
             with open(file, "w") as output:
                 output.write(result)
         print("Files are created")
