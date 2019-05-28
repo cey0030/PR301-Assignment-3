@@ -43,6 +43,7 @@ class Controller:
 
     def create_bar_chart(self):
         all_num = self.file.get_all_num()
+        print(all_num)
         self.chart.create_bar_chart(all_num)
 
     def create_pie_chart(self):
