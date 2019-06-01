@@ -1,11 +1,9 @@
 from fileHandler import PrintClass
-from chart_maker import ChartMaker
+from chart_maker import ChartMaker, BarChartMaker, PieChartMaker, LineGraphMaker
 
 
 class Controller:
     file = PrintClass()
-    chart = ChartMaker()
-
     @staticmethod
     def load_file(infile):
         r"""
@@ -42,17 +40,16 @@ class Controller:
         self.file.output_classes(file_location)
 
     def create_bar_chart(self):
-        all_num = self.file.get_all_num()
-        print(all_num)
-        self.chart.create_bar_chart(all_num)
+        chart = ChartMaker(BarChartMaker())
+        chart.draw(self.file.get_all_num())
 
     def create_pie_chart(self):
-        all_num = self.file.get_all_num()
-        self.chart.create_pie_chart(all_num)
+        chart = ChartMaker(PieChartMaker())
+        chart.draw(self.file.get_all_num())
 
     def create_line_chart(self):
-        all_num = self.file.get_all_num()
-        self.chart.create_line_graph(all_num)
+        chart = ChartMaker(LineGraphMaker())
+        chart.draw(self.file.get_all_num())
 
 
 if __name__ == "__main__":
