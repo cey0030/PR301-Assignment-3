@@ -35,7 +35,6 @@ class FileProcessor:
                 methods.append(listItem[:listItem.index("\n")-2].strip())
         num_method = len(methods)
         self.num_all_method_list.append(num_method)
-        print("fileProcessor {}".format(self.num_all_method_list))
         return methods
 
     def get_relationship(self, class_name):
