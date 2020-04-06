@@ -1,4 +1,4 @@
-# PR301-Assignment 3 Documentation
+# GOF Design Patterns
 
 ## Design Patterns
 
